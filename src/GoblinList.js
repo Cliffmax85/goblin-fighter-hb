@@ -8,8 +8,8 @@ export default function GoblinList({ goblins, handleDeleteGoblin }) {
 
       {
         goblins.map((goblin, i) => <Goblin
-        handleDeleteGoblin={handleDeleteGoblin}
-        key={`${goblin.name}-{i}`} {...goblin} />)
+          handleDeleteGoblin={handleDeleteGoblin}
+          key={`${goblin.name}-{i}`} {...goblin} />)
       }
     </div>
   );
