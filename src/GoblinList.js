@@ -9,7 +9,7 @@ export default function GoblinList(props) {
       {
         props.goblins.map((goblin, i) => 
           <Goblin
-            key={`${goblin.name}-${i}`} {...goblin} handleDeleteGoblin={props.handleDeleteGoblin} />)
+            key={`${goblin.name}-${i}`} goblin={goblin} handleDeleteGoblin={props.handleDeleteGoblin} />)
       }
     </div>
   );
