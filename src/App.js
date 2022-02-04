@@ -17,7 +17,7 @@ function App() {
   const [filteredGoblins, setFilteredGoblins] = useState([]);
   const [goblinFormName, setGoblinFormName] = useState('');
   const [goblinFormHP, setGoblinFormHP] = useState('');
-  const [goblinFormColor, setGoblinFormColor] = useState('lightblue');
+  const [goblinFormColor, setGoblinFormColor] = useState('');
   
   function submitGoblin(e) {
     e.preventDefault();
@@ -64,7 +64,7 @@ function App() {
           */
           name: goblinFormName,
           hp: goblinFormHP,
-          colo: goblinFormColor
+          color: goblinFormColor
         }}/>
       </div>
       <div className='goblin-filter quarter'>
@@ -88,11 +88,13 @@ function App() {
         goblinFormName={goblinFormName}
         setGoblinFormName={setGoblinFormName}
         goblinFormColor={goblinFormColor}
+        setGoblinFormColor={setGoblinFormColor}
         goblinFormHP={goblinFormHP}
         setGoblinFormHP={setGoblinFormHP}
       />
       <GoblinList 
-        goblins={[]} // this takes in an array of goblins. If the filteredGoblins has a length, use that array. Otherwise, use the allGoblins array 
+        goblins={filteredGoblins.length ? filteredGoblins : allGoblins
+        } // this takes in an array of goblins. If the filteredGoblins has a length, use that array. Otherwise, use the allGoblins array 
         handleDeleteGoblin={handleDeleteGoblin} // note that the goblin list has access to the ability to delete
       />
     </div>
